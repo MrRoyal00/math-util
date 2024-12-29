@@ -21,15 +21,30 @@ public class MathUtil {
     //20! co 18 con so 0, vua du cho kieu 'long' cua java, 21! la tran so cua 'long'
     //bai nay quy uoc tinh n! trong khoang tu 0-> 20
     
+//    public static long getFactorial(int n){
+//        if(n < 0 || n > 20){
+//            throw new IllegalArgumentException("Invalid argument. N must be between 0 to 20");
+//        }
+//        if(n == 0 || n == 1) return 1;
+//        long product = 1;
+//        for (int i = 2; i <= n; i++) {
+//            product *= i;
+//        }
+//        return product;
+//    }
+    
+    //Hoc ve de quy 
+    //6! = 6 x 5!
+    //5! = 5 x 4!
+    //...1! = 1. diem dung
+    //-> muon tinh n giai thua thi lay n * (n-1)!
+    
     public static long getFactorial(int n){
         if(n < 0 || n > 20){
-            throw new IllegalArgumentException("Invalid argument. N must be between 0 to 20");
+            throw new IllegalArgumentException("N must be between 0 to 20");
         }
         if(n == 0 || n == 1) return 1;
-        long product = 1;
-        for (int i = 2; i <= n; i++) {
-            product *= i;
-        }
-        return product;
+        
+        return n * getFactorial(n-1);
     }
 }

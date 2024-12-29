@@ -20,7 +20,7 @@ public class Main {
         //3: so sanh de xem ket qua co nhu ki vong hay k. 
         
         long expected = 120;
-        int n = -5;
+        int n = 5;
         long actual = MathUtil.getFactorial(n);
         System.out.println("5! = " + expected + " expected");
         System.out.println("5! = " + actual + " actual");
